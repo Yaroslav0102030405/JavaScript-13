@@ -10,13 +10,13 @@
  */
 
 // Нужно выбрать только один тогда используешь document.querySelector
-const navEl = document.querySelector(".site-nav");
-console.log(navEl);
-// возвращает первый найденный элемент или если не нашло ничего то значение null
+// const navEl = document.querySelector(".site-nav");
+// console.log(navEl);
+// // возвращает первый найденный элемент или если не нашло ничего то значение null
 
-// Нужно выбрать все тогда тебе подойдет document.querySelectorAll
-const navLinksEl = document.querySelectorAll(".site-nav_link");
-console.log(navLinksEl);
+// // Нужно выбрать все тогда тебе подойдет document.querySelectorAll
+// const navLinksEl = document.querySelectorAll(".site-nav_link");
+// console.log(navLinksEl);
 // возвращает все link или если не нашло ничего то пустой массив []
 
 // Второй вариант можно выполнить прямо на элементе document.querySelectorAll
@@ -79,5 +79,31 @@ const actions = document.querySelectorAll(".js-actions button");
 console.log(actions[2].dataset.action);
 
 /*
-* Интерфейс classList
+* Интерфейс classList (как добавить стили и как работаь с классами)
+* - add(класс)
+* - remove(класс)
+* - toggle(класс)
+* - replacel(старыйКласс новыйКласс)
+* - contains(класс)
+*/
+
+const navEl = document.querySelector('.site-nav')
+console.log(navEl.classList)
+navEl.classList.add('super-cool', 'bnmkkl')
+// через запятую вы добавляете классы. И это работает только с классами
+navEl.classList.remove('super-cool')
+// класс который нужно удалить
+// у каждого элемента есть специальный интерфейс называеться classlist
+
+// можно сделать токл переключение. Если класс есть тогда не добавит а если нет тогда добавит
+navEl.classList.toggle('super-cool')
+navEl.classList.replace('super-cool', 'qazxsw')
+// заменили класс super-cool на qazxsw
+navEl.classList.contains('qazxsw')
+// проверить или есть там такой класс и нам вернте если есть true
+
+// С помощью classlist мы можем на какие-то элементы добавлять штуки рахные. Тут нужно смотреть видео
+
+/*
+* Навигация по DOM
 */
