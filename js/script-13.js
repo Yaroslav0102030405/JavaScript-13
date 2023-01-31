@@ -200,3 +200,36 @@ navEl.insertBefore(navItemEl, navEl.children[0])
 /*
 * Создаем и добавляем коллекцию
 */
+
+const colorPickerOptions = [
+  { label: "red", color: "#f44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "grey", color: "#607D8B" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigp", color: "#3f51B5" },
+];
+
+const colorPickerContainerEl = document.querySelector('.js-color-picker')
+
+/*
+* Пишем функцию для создания разметки колорпикера
+*/
+const makeColorPickerOptions = options => {
+  return options.map(options => {
+    const buttonEl = document.createElement('button')
+    buttonEl.type = 'button'
+    buttonEl.classList.add('color-picker__options')
+    buttonEl.textContent = options.label
+    buttonEl.style.backgroundColor = options.color
+
+    return buttonEl
+  })
+}
+
+const elements = makeColorPickerOptions(colorPickerOptions)
+colorPickerContainerEl.append(...elements)
+
+// мы мепнули массив обьектов и получили массив элементов и потом этот элемент массивов уже запентели уже в существующую разметку
+// все коллекции в JS делаються вот так
+
