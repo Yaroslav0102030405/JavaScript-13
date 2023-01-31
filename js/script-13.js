@@ -63,29 +63,29 @@ magicBtn.addEventListener("click", () => {
  * - has(имя-атрибута) проверить или есть атрибут (вернет true или false) Применяется на элементе
  */
 
-const imageEl = document.querySelector(".hero__image");
-// Если вы хотите удалить атрибут
-// imageEl.removeAttribute("src");
+// const imageEl = document.querySelector(".hero__image");
+// // Если вы хотите удалить атрибут
+// // imageEl.removeAttribute("src");
 
-// Проверить или есть такой артрибут
-console.log(imageEl.hasAttribute("src"));
+// // Проверить или есть такой артрибут
+// console.log(imageEl.hasAttribute("src"));
 
 /*
  * Data-атрибуты
  */
 // это кастомный атрбибут где ты можешь на элемент дать произвольный атрибут с произвольным именнем и произвольным значением
 // который не являеться стандартным в html
-const actions = document.querySelectorAll(".js-actions button");
-console.log(actions[2].dataset.action);
+// const actions = document.querySelectorAll(".js-actions button");
+// console.log(actions[2].dataset.action);
 
 /*
-* Интерфейс classList (как добавить стили и как работаь с классами)
-* - add(класс)
-* - remove(класс)
-* - toggle(класс)
-* - replacel(старыйКласс новыйКласс)
-* - contains(класс)
-*/
+ * Интерфейс classList (как добавить стили и как работаь с классами)
+ * - add(класс)
+ * - remove(класс)
+ * - toggle(класс)
+ * - replacel(старыйКласс новыйКласс)
+ * - contains(класс)
+ */
 
 // const navEl = document.querySelector('.site-nav')
 // console.log(navEl.classList)
@@ -105,20 +105,98 @@ console.log(actions[2].dataset.action);
 // С помощью classlist мы можем на какие-то элементы добавлять штуки рахные. Тут нужно смотреть видео
 
 /*
-* Навигация по DOM
-*/
+ * Навигация по DOM
+ */
 
 // Иерархия очень простая. Предки-родители а потомки-дети соседи.
 
-const navEl = document.querySelector('.site-nav')
+// const navEl = document.querySelector('.site-nav')
 
-// Первый элемент
-const firstNavItemEl = navEl.firstElementChild
-console.log(firstNavItemEl)
-// Последний элемент
-console.log(navEl.lastElementChild)
-console.log(navEl.children);
-// HTMLCollection(3) [li.site-nav__item, li.site-nav__item, li.site-nav__item]
-console.log(navEl.children[0]);
+// // Первый элемент
+// const firstNavItemEl = navEl.firstElementChild
+// console.log(firstNavItemEl)
+// // Последний элемент
+// console.log(navEl.lastElementChild)
+// console.log(navEl.children);
+// // HTMLCollection(3) [li.site-nav__item, li.site-nav__item, li.site-nav__item]
+// console.log(navEl.children[0]);
 
 // Вам нужно помнить первый последний и дети
+
+// мы научились получать ссылки на элементы научились читать свойства изменять эти свойства и работать с класс листом
+// а теперь будем учиться создавать что-то новое
+
+/*
+ * Создание элементов
+ * - Вставка узлов: appendChild(elem), insertBefore(elem, nextSibling), append(...elems), prepend(...elems)
+ */
+
+/*
+ * Создаем заголовок
+ */
+
+const titleEl = document.createElement("h1");
+// Мы создали теги <h1></h1>
+titleEl.classList.add("page-title");
+// создали класс на теги <h1 class="page-title"></h1>
+titleEl.textContent = "Это заголовк страницы";
+/* <h1 class="page-title">Это заголовок страницы</h1> */
+// console.log(titleEl);
+// сейчас мы создали DOM элемент в памяти
+
+/*
+ * Создаем изображение
+ * https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLk8GJRa_9ZgeJf-RTZu0mBAeRimUim6ZUQ&usqp=CAU
+ * - сначала вы сохдаете элементы в памяти а потом будет добавлять в документ html
+ */
+const imageEl = document.createElement("img");
+imageEl.src =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLk8GJRa_9ZgeJf-RTZu0mBAeRimUim6ZUQ&usqp=CAU";
+imageEl.alt = "road";
+imageEl.width = "640";
+// console.log(imageEl);
+
+// document.body.appendChild(imageEl);
+const heroEl = document.querySelector('.hero')
+// heroEl.appendChild(titleEl)
+// // за первую операцию мы поставили заголовок
+// heroEl.appendChild(imageEl)
+// за вторую операцию мы поставили картинку
+
+heroEl.append(titleEl, imageEl)
+// за одну операцию добавить любое количество элементов. Порядок важен сначала заголовок потом картинка а не наоборот
+// это современный метод для вставки больше чем одного элемента
+/*
+ * Создаем и добавляем новый пункт в меню
+ */
+const navItemEl = document.createElement("li");
+navItemEl.classList.add("site-nav__item");
+
+const navLinkEl = document.createElement("a");
+navLinkEl.classList.add("site-nav__link");
+navLinkEl.textContent = "Личный кабинет";
+navLinkEl.href = "/profile";
+
+// navLinkEl.appendChild(navLinkEl);
+
+// const navEl = document.querySelector(".site-nav");
+
+// navEl.insertBefore(navItemEl, navEl.children[1]);
+navItemEl.appendChild(navLinkEl)
+// мы сделали li вложили в а
+console.log(navItemEl);
+
+// получаем ссылку на ul
+const navEl = document.querySelector('.site-nav')
+// navEl.appendChild(navItemEl)
+// это поставить последним элементом
+// navEl.insertBefore(navItemEl, navEl.firstElementChild);
+// поставить первым
+// navEl.insertBefore(navItemEl, navEl.lastElementChild);
+// поставить последним
+navEl.insertBefore(navItemEl, navEl.children[0])
+// поставить по индексу
+
+/*
+* Создаем и добавляем коллекцию
+*/
