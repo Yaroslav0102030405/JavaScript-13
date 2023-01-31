@@ -189,6 +189,7 @@ console.log(sorted);
  * - потом сортируем
  */
 
+export default [
 const players = [
   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
   { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
@@ -196,7 +197,7 @@ const players = [
   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
   { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
 ];
-
+]
 const onlineAndSorted = players
   .filter((player) => player.online)
   // метод filter возвращает новый массив отфильтрованных игроков у которых online: true

@@ -1,3 +1,5 @@
+// import players from './script-12.js'
+// console.log(players)
 /*
  * Поиск элементов (анучились выберать элементы)
  */
@@ -236,4 +238,12 @@ colorPickerContainerEl.append(...elements)
 /*
 * Создаем карточку продукта
 * - В классе продукт может быть product--on-sale product--not-available
+*/
+
+// export - открыть import - забрать
+
+// Смотреть видео
+
+/*
+* Парс строк
 */
