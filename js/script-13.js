@@ -137,11 +137,11 @@ magicBtn.addEventListener("click", () => {
  * Создаем заголовок
  */
 
-const titleEl = document.createElement("h1");
-// Мы создали теги <h1></h1>
-titleEl.classList.add("page-title");
-// создали класс на теги <h1 class="page-title"></h1>
-titleEl.textContent = "Это заголовк страницы";
+// const titleEl = document.createElement("h1");
+// // Мы создали теги <h1></h1>
+// titleEl.classList.add("page-title");
+// // создали класс на теги <h1 class="page-title"></h1>
+// titleEl.textContent = "Это заголовк страницы";
 /* <h1 class="page-title">Это заголовок страницы</h1> */
 // console.log(titleEl);
 // сейчас мы создали DOM элемент в памяти
@@ -165,7 +165,7 @@ const heroEl = document.querySelector('.hero')
 // heroEl.appendChild(imageEl)
 // за вторую операцию мы поставили картинку
 
-heroEl.append(titleEl, imageEl)
+// heroEl.append(titleEl, imageEl)
 // за одну операцию добавить любое количество элементов. Порядок важен сначала заголовок потом картинка а не наоборот
 // это современный метод для вставки больше чем одного элемента
 /*
@@ -246,4 +246,24 @@ colorPickerContainerEl.append(...elements)
 
 /*
 * Парс строк
+* Свойство innerHTML
+* - чтение
+* - запись
 */
+const titleEl = document.querySelector('.title')
+// console.log(titleEl.textContent)
+// console.log(titleEl.innerHTML)
+// titleEl.innerHTML = '<a href="">Это ссылка</a>';
+// titleEl.innerHTML = ''
+// тут мы очитстили контент который находился в теге h2
+// Парсит когда видит теги он сам будет их создавать
+
+// А как добавить что-то в строку?
+/*
+* Вставка разметки с insertAdjacentHTML
+*/
+
+titleEl.insertAdjacentHTML(
+  "beforeend",
+  '<a href="" class="title-link">Это ссылка</a >'
+);
