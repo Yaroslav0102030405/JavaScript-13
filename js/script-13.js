@@ -87,19 +87,19 @@ console.log(actions[2].dataset.action);
 * - contains(класс)
 */
 
-const navEl = document.querySelector('.site-nav')
-console.log(navEl.classList)
-navEl.classList.add('super-cool', 'bnmkkl')
-// через запятую вы добавляете классы. И это работает только с классами
-navEl.classList.remove('super-cool')
+// const navEl = document.querySelector('.site-nav')
+// console.log(navEl.classList)
+// navEl.classList.add('super-cool', 'bnmkkl')
+// // через запятую вы добавляете классы. И это работает только с классами
+// navEl.classList.remove('super-cool')
 // класс который нужно удалить
 // у каждого элемента есть специальный интерфейс называеться classlist
 
 // можно сделать токл переключение. Если класс есть тогда не добавит а если нет тогда добавит
-navEl.classList.toggle('super-cool')
-navEl.classList.replace('super-cool', 'qazxsw')
-// заменили класс super-cool на qazxsw
-navEl.classList.contains('qazxsw')
+// navEl.classList.toggle('super-cool')
+// navEl.classList.replace('super-cool', 'qazxsw')
+// // заменили класс super-cool на qazxsw
+// navEl.classList.contains('qazxsw')
 // проверить или есть там такой класс и нам вернте если есть true
 
 // С помощью classlist мы можем на какие-то элементы добавлять штуки рахные. Тут нужно смотреть видео
@@ -109,3 +109,16 @@ navEl.classList.contains('qazxsw')
 */
 
 // Иерархия очень простая. Предки-родители а потомки-дети соседи.
+
+const navEl = document.querySelector('.site-nav')
+
+// Первый элемент
+const firstNavItemEl = navEl.firstElementChild
+console.log(firstNavItemEl)
+// Последний элемент
+console.log(navEl.lastElementChild)
+console.log(navEl.children);
+// HTMLCollection(3) [li.site-nav__item, li.site-nav__item, li.site-nav__item]
+console.log(navEl.children[0]);
+
+// Вам нужно помнить первый последний и дети
