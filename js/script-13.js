@@ -267,3 +267,9 @@ titleEl.insertAdjacentHTML(
   "beforeend",
   '<a href="" class="title-link">Это ссылка</a >'
 );
+
+/*
+* Мастерская таблица транзакций
+*/
+
+// смотреть видео
