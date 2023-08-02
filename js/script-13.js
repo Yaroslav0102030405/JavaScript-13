@@ -1,14 +1,8 @@
-// import players from './script-12.js'
-// console.log(players)
 /*
- * Поиск элементов (анучились выберать элементы)
- */
-
-/*
- * Получить ссылку на какой-то определенный элемент в коде можно с помощью следующих двух методов
+ * Получить доступ к html-елементу (получить доступ к ссылке)
  *
  * document.querySelector(selector) и document.quertSelectorAll(selector)
- * selector - любой валидный CSS-селектор
+ * selector - любой валидный CSS-селектор тег селектор
  */
 
 // Нужно выбрать только один тогда используешь document.querySelector
@@ -35,25 +29,49 @@
 // Например у меня есть секция hero заголовок картинка и я хочу получить доступ к элементам и что-то с ними сделать
 // какие-то свойства по изменять (заменить изображение и заменить название изображения)
 
+// мы получили доступ к кнопке (чтобы ее изменить)
 const magicBtn = document.querySelector('.button');
+// получили доступ к заголовку (для изменения на новый заголовок)
 const heroTitleEl = document.querySelector('.hero-title');
 
+// создали функцию которая заменяет старую фоторгафию на новую которая пришла с бекенда
+// добавили слушателя событий чтобы при клике выполнилась эта функция замены фотографии
 magicBtn.addEventListener('click', () => {
+  // получили доступ к замене фоторгафии на другую которую прислали с бекенда
   const imageEl = document.querySelector('.hero__image');
-  console.log(imageEl);
-  console.log(imageEl.src);
-  // мы получим ссылку на картинку
-  console.log(imageEl.src);
+  // console.log(imageEl);
+  // console.log(imageEl.src);
+  // console.log(imageEl.src);
+  // получили доступ к пути адресса и установили новую фоторгафию
   imageEl.src =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0FQ8R0kjGVr1rqYBFplyCNnRHD4B-pN47pleRJvHawQ3TIY5BJHi8rdQ-hVmmxMOazc8&usqp=CAU';
-  // мы записали и присвоили новую фотку
+  // установили новое описание
   imageEl.alt = 'Новый заголовок';
 
   console.log(heroTitleEl.textContent);
-  // это свойство которое хранит весь тествоый контент между открывающим и закрывающим тегом
-  // Вы используете в том случае когда нужно подминить текствоый контент (перезаписать свойство)
+  // перезаписали новый заголовок
   heroTitleEl.textContent = 'Я сладкий пирожочек';
+
+  // // ужалить атрибут
+  // imageEl.removeAttribute('src')
 });
+
+const navEl = document.querySelector('.site-nav');
+console.log(navEl.classList);
+// добавили новый класс
+navEl.classList.add('super-cool');
+// удалить класс
+// navEl.classList.remove('super-cool')
+
+// перезаписать класс удалить старый и вместо него записать новый класс
+navEl.classList.replace('super-cool', 'qwedffdds');
+
+// добавили ссылку
+const currentPageUrl = '/portfolio';
+
+const linkEl = document.querySelector(`.site-nav__link[href="${currentPageUrl}"]`)
+
+linkEl.classList.add('site-nav__link--current')
 
 // Дальше интерфейс атрибутов - это набор методов для работы с атрибутами
 
@@ -73,7 +91,7 @@ magicBtn.addEventListener('click', () => {
 // console.log(imageEl.hasAttribute("src"));
 
 /*
- * Data-атрибуты
+ * Data-атрибуты используються для добавления функционала ане для того чтобы css селекторы пиилить туда
  */
 // это кастомный атрбибут где ты можешь на элемент дать произвольный атрибут с произвольным именнем и произвольным значением
 // который не являеться стандартным в html
@@ -189,7 +207,7 @@ navItemEl.appendChild(navLinkEl);
 console.log(navItemEl);
 
 // получаем ссылку на ul
-const navEl = document.querySelector('.site-nav');
+// const navEl = document.querySelector('.site-nav')
 // navEl.appendChild(navItemEl)
 // это поставить последним элементом
 // navEl.insertBefore(navItemEl, navEl.firstElementChild);

@@ -1,15 +1,19 @@
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.67;
-  letter-spacing: 0.02em;
-  
-  color: var(--main-text-cl)
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 0.02em;
+
+    color: var(--main-text-cl);
 }
 
 .title-link {
- display: inline-flex;
-  margin-left: 40;
-  text-decoration: none;
+    display: inline-flex;
+    margin-left: 40;
+    text-decoration: none;
+}
+
+.site-nav__link--current {
+    color: tomato;
 }
