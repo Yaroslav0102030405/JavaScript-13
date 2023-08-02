@@ -35,24 +35,24 @@
 // Например у меня есть секция hero заголовок картинка и я хочу получить доступ к элементам и что-то с ними сделать
 // какие-то свойства по изменять (заменить изображение и заменить название изображения)
 
-const magicBtn = document.querySelector(".button");
-const heroTitleEl = document.querySelector(".hero-title");
+const magicBtn = document.querySelector('.button');
+const heroTitleEl = document.querySelector('.hero-title');
 
-magicBtn.addEventListener("click", () => {
-  const imageEl = document.querySelector(".hero__image");
+magicBtn.addEventListener('click', () => {
+  const imageEl = document.querySelector('.hero__image');
   console.log(imageEl);
   console.log(imageEl.src);
   // мы получим ссылку на картинку
   console.log(imageEl.src);
   imageEl.src =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0FQ8R0kjGVr1rqYBFplyCNnRHD4B-pN47pleRJvHawQ3TIY5BJHi8rdQ-hVmmxMOazc8&usqp=CAU";
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0FQ8R0kjGVr1rqYBFplyCNnRHD4B-pN47pleRJvHawQ3TIY5BJHi8rdQ-hVmmxMOazc8&usqp=CAU';
   // мы записали и присвоили новую фотку
-  imageEl.alt = "Новый заголовок";
+  imageEl.alt = 'Новый заголовок';
 
   console.log(heroTitleEl.textContent);
   // это свойство которое хранит весь тествоый контент между открывающим и закрывающим тегом
   // Вы используете в том случае когда нужно подминить текствоый контент (перезаписать свойство)
-  heroTitleEl.textContent = "Я сладкий пирожочек";
+  heroTitleEl.textContent = 'Я сладкий пирожочек';
 });
 
 // Дальше интерфейс атрибутов - это набор методов для работы с атрибутами
@@ -151,15 +151,15 @@ magicBtn.addEventListener("click", () => {
  * https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLk8GJRa_9ZgeJf-RTZu0mBAeRimUim6ZUQ&usqp=CAU
  * - сначала вы сохдаете элементы в памяти а потом будет добавлять в документ html
  */
-const imageEl = document.createElement("img");
+const imageEl = document.createElement('img');
 imageEl.src =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLk8GJRa_9ZgeJf-RTZu0mBAeRimUim6ZUQ&usqp=CAU";
-imageEl.alt = "road";
-imageEl.width = "640";
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoLk8GJRa_9ZgeJf-RTZu0mBAeRimUim6ZUQ&usqp=CAU';
+imageEl.alt = 'road';
+imageEl.width = '640';
 // console.log(imageEl);
 
 // document.body.appendChild(imageEl);
-const heroEl = document.querySelector('.hero')
+const heroEl = document.querySelector('.hero');
 // heroEl.appendChild(titleEl)
 // // за первую операцию мы поставили заголовок
 // heroEl.appendChild(imageEl)
@@ -171,86 +171,86 @@ const heroEl = document.querySelector('.hero')
 /*
  * Создаем и добавляем новый пункт в меню
  */
-const navItemEl = document.createElement("li");
-navItemEl.classList.add("site-nav__item");
+const navItemEl = document.createElement('li');
+navItemEl.classList.add('site-nav__item');
 
-const navLinkEl = document.createElement("a");
-navLinkEl.classList.add("site-nav__link");
-navLinkEl.textContent = "Личный кабинет";
-navLinkEl.href = "/profile";
+const navLinkEl = document.createElement('a');
+navLinkEl.classList.add('site-nav__link');
+navLinkEl.textContent = 'Личный кабинет';
+navLinkEl.href = '/profile';
 
 // navLinkEl.appendChild(navLinkEl);
 
 // const navEl = document.querySelector(".site-nav");
 
 // navEl.insertBefore(navItemEl, navEl.children[1]);
-navItemEl.appendChild(navLinkEl)
+navItemEl.appendChild(navLinkEl);
 // мы сделали li вложили в а
 console.log(navItemEl);
 
 // получаем ссылку на ul
-const navEl = document.querySelector('.site-nav')
+const navEl = document.querySelector('.site-nav');
 // navEl.appendChild(navItemEl)
 // это поставить последним элементом
 // navEl.insertBefore(navItemEl, navEl.firstElementChild);
 // поставить первым
 // navEl.insertBefore(navItemEl, navEl.lastElementChild);
 // поставить последним
-navEl.insertBefore(navItemEl, navEl.children[0])
+navEl.insertBefore(navItemEl, navEl.children[0]);
 // поставить по индексу
 
 /*
-* Создаем и добавляем коллекцию
-*/
+ * Создаем и добавляем коллекцию
+ */
 
 const colorPickerOptions = [
-  { label: "red", color: "#f44336" },
-  { label: "green", color: "#4CAF50" },
-  { label: "blue", color: "#2196F3" },
-  { label: "grey", color: "#607D8B" },
-  { label: "pink", color: "#E91E63" },
-  { label: "indigp", color: "#3f51B5" },
+  { label: 'red', color: '#f44336' },
+  { label: 'green', color: '#4CAF50' },
+  { label: 'blue', color: '#2196F3' },
+  { label: 'grey', color: '#607D8B' },
+  { label: 'pink', color: '#E91E63' },
+  { label: 'indigp', color: '#3f51B5' },
 ];
 
-const colorPickerContainerEl = document.querySelector('.js-color-picker')
+const colorPickerContainerEl = document.querySelector('.js-color-picker');
 
 /*
-* Пишем функцию для создания разметки колорпикера
-*/
+ * Пишем функцию для создания разметки колорпикера
+ */
 const makeColorPickerOptions = options => {
   return options.map(options => {
-    const buttonEl = document.createElement('button')
-    buttonEl.type = 'button'
-    buttonEl.classList.add('color-picker__options')
-    buttonEl.textContent = options.label
-    buttonEl.style.backgroundColor = options.color
+    const buttonEl = document.createElement('button');
+    buttonEl.type = 'button';
+    buttonEl.classList.add('color-picker__options');
+    buttonEl.textContent = options.label;
+    buttonEl.style.backgroundColor = options.color;
 
-    return buttonEl
-  })
-}
+    return buttonEl;
+  });
+};
 
-const elements = makeColorPickerOptions(colorPickerOptions)
-colorPickerContainerEl.append(...elements)
+const elements = makeColorPickerOptions(colorPickerOptions);
+colorPickerContainerEl.append(...elements);
 
 // мы мепнули массив обьектов и получили массив элементов и потом этот элемент массивов уже запентели уже в существующую разметку
 // все коллекции в JS делаються вот так
 
 /*
-* Создаем карточку продукта
-* - В классе продукт может быть product--on-sale product--not-available
-*/
+ * Создаем карточку продукта
+ * - В классе продукт может быть product--on-sale product--not-available
+ */
 
 // export - открыть import - забрать
 
 // Смотреть видео
 
 /*
-* Парс строк
-* Свойство innerHTML
-* - чтение
-* - запись
-*/
-const titleEl = document.querySelector('.title')
+ * Парс строк
+ * Свойство innerHTML
+ * - чтение
+ * - запись
+ */
+const titleEl = document.querySelector('.title');
 // console.log(titleEl.textContent)
 // console.log(titleEl.innerHTML)
 // titleEl.innerHTML = '<a href="">Это ссылка</a>';
@@ -260,16 +260,16 @@ const titleEl = document.querySelector('.title')
 
 // А как добавить что-то в строку?
 /*
-* Вставка разметки с insertAdjacentHTML
-*/
+ * Вставка разметки с insertAdjacentHTML
+ */
 
 titleEl.insertAdjacentHTML(
-  "beforeend",
-  '<a href="" class="title-link">Это ссылка</a >'
+  'beforeend',
+  '<a href="" class="title-link">Это ссылка</a >',
 );
 
 /*
-* Мастерская таблица транзакций
-*/
+ * Мастерская таблица транзакций
+ */
 
 // смотреть видео
