@@ -21,7 +21,8 @@
 // ? и удалять элементы, реагировать на действия пользователя и многое другое
 
 
-
+// ! - document.querySelector(selector)
+// !- document.quertSelectorAll(selector)
 /*
  * Получить доступ к html-елементу (получить доступ к ссылке)
  *
@@ -29,27 +30,28 @@
  * selector - любой валидный CSS-селектор тег селектор
  */
 
-// Нужно выбрать только один тогда используешь document.querySelector
-// const navEl = document.querySelector(".site-nav");
-// console.log(navEl);
-// // возвращает первый найденный элемент или если не нашло ничего то значение null
+// Правильное название пеерменной
+// Когда вы видете Ref или EL - то это нужно понимать что это ссылка на дом элемент
+const navrRef = 10 // Ref - означает ссылка
+const naviEl = 5 // El - означает элемент
 
-// // Нужно выбрать все тогда тебе подойдет document.querySelectorAll
-// const navLinksEl = document.querySelectorAll(".site-nav_link");
-// console.log(navLinksEl);
-// возвращает все link или если не нашло ничего то пустой массив []
+//Нужно выбрать только один тогда используешь document.querySelector
+// получаем доступ (ссылку) на элемент и возвращает первый найденный элемент если ничего не нашел возвращает null
+const navigEl = document.querySelector("li");
+console.log(navigEl);
 
-// Второй вариант можно выполнить прямо на элементе document.querySelectorAll
+// Если нужно выбрать все элементы тогда подойдет document.querySelectorAll
+//возвращает все link или если не нашло ничего то пустой массив []
+const navLinksEl = document.querySelectorAll("li");
+console.log(navLinksEl);
 
-/*
- * Document.querySelectorAll и Element.querySelectorAll
- */
+// ! Присвоить элементу что-то другое imageEl.srs = "новую картинку"
+// ! imageEl.removeAttribute('src') - удалить атрибут
+// ! imageEl.hasAttribute('src') - проверить или есть такой атрибут и если есть то вернеться true // false
+// ! Свойства textContent - для изменения текстового контента (заголовки параграф описание)
+// ! heroTitleEl.textContent = "новый текст"
 
-/*
- * Свойства элемента (hero)
- * Изображение
- * Текст и textContent
- */
+// Пример 1
 // Например у меня есть секция hero заголовок картинка и я хочу получить доступ к элементам и что-то с ними сделать
 // какие-то свойства по изменять (заменить изображение и заменить название изображения)
 
@@ -76,20 +78,21 @@ magicBtn.addEventListener('click', () => {
   // перезаписали новый заголовок
   heroTitleEl.textContent = 'Я сладкий пирожочек';
 
-  // // ужалить атрибут
+  // // удалить атрибут
   // imageEl.removeAttribute('src')
 });
 
-const navEl = document.querySelector('.site-nav');
-console.log(navEl.classList);
-// добавили новый класс
-navEl.classList.add('super-cool');
-// удалить класс
-// navEl.classList.remove('super-cool')
+// ! action - это классы оформления для CSS и они могу поменяться по этому вы даете классы js
+//! js-action - это клас для работы с помощью javascript с этим элементом (не для верстки а для js не трогать)
 
-// перезаписать класс удалить старый и вместо него записать новый класс
-navEl.classList.replace('super-cool', 'qwedffdds');
+//! Дата-атрибуты
+//! data-action = "add" // добавить
+//! data action = "remove" // удалить
+//! data action = "edit" // редактировать
+// 
 
+
+// Пример 2
 // добавили ссылку
 const currentPageUrl = '/portfolio';
 
@@ -97,40 +100,11 @@ const linkEl = document.querySelector(`.site-nav__link[href="${currentPageUrl}"]
 
 linkEl.classList.add('site-nav__link--current')
 
-
-// получить доступ к свойствам
-const firstNavItemEl = navEl.firstElementChild
-// получить доступ к первому элементу
-console.log(firstNavItemEl)
-// получить доступ к елементу по индексу
-console.log(navEl.children[1])
-// получить доступ к последнему элементу
-console.log(navEl.lastElementChild)
-
-// Дальше интерфейс атрибутов - это набор методов для работы с атрибутами
-
-/*
- * Атрибуты (методы)
- * - get(имя-атрибута) почти не используется
- * - set(имя-атрибута) почти не используется
- * - remove(имя-атрибута) удалить атрибут Применяеться на элементе
- * - has(имя-атрибута) проверить или есть атрибут (вернет true или false) Применяется на элементе
- */
-
-// const imageEl = document.querySelector(".hero__image");
-// // Если вы хотите удалить атрибут
-// // imageEl.removeAttribute("src");
-
-// // Проверить или есть такой артрибут
-// console.log(imageEl.hasAttribute("src"));
-
 /*
  * Data-атрибуты используються для добавления функционала ане для того чтобы css селекторы пиилить туда
  */
-// это кастомный атрбибут где ты можешь на элемент дать произвольный атрибут с произвольным именнем и произвольным значением
-// который не являеться стандартным в html
-// const actions = document.querySelectorAll(".js-actions button");
-// console.log(actions[2].dataset.action);
+const actions = document.querySelectorAll(".js-actions button");
+console.log(actions[2].dataset.action);
 
 /*
  * Интерфейс classList (как добавить стили и как работаь с классами)
@@ -141,44 +115,49 @@ console.log(navEl.lastElementChild)
  * - contains(класс)
  */
 
-// const navEl = document.querySelector('.site-nav')
-// console.log(navEl.classList)
-// navEl.classList.add('super-cool', 'bnmkkl')
-// // через запятую вы добавляете классы. И это работает только с классами
-// navEl.classList.remove('super-cool')
+// ! classList.add() - создать класс
+//! classList.remove() - удалить клас
+//! classlist.toggle()
+//! classList.replace() - заменить класс 
+//! cklassList.contains() - проверить или там есть такой класс если да тогда вернтет true // false
+
+const navEl = document.querySelector('.site-nav')
+console.log(navEl.classList)
+// добавить новый класс и через запятую вы добавляете скольок угодно классов. И это работает только с классами
+navEl.classList.add('super-cool', 'bnmkkl')
 // класс который нужно удалить
-// у каждого элемента есть специальный интерфейс называеться classlist
+navEl.classList.remove('super-cool')
+
 
 // можно сделать токл переключение. Если класс есть тогда не добавит а если нет тогда добавит
-// navEl.classList.toggle('super-cool')
-// navEl.classList.replace('super-cool', 'qazxsw')
-// // заменили класс super-cool на qazxsw
-// navEl.classList.contains('qazxsw')
+navEl.classList.toggle('super-cool')
+// заменили класс super-cool на qazxsw
+navEl.classList.replace('super-cool', 'qazxsw')
 // проверить или есть там такой класс и нам вернте если есть true
+navEl.classList.contains('qazxsw')
 
-// С помощью classlist мы можем на какие-то элементы добавлять штуки рахные. Тут нужно смотреть видео
 
 /*
  * Навигация по DOM
  */
 
+//! navEl.firstElementChild - первый элемент
+//! navEl.lastElementChild - последний элемент
+//! navEl.children[1] - выбрать элемент по индексу
+
 // Иерархия очень простая. Предки-родители а потомки-дети соседи.
 
 // const navEl = document.querySelector('.site-nav')
 
-// // Первый элемент
-// const firstNavItemEl = navEl.firstElementChild
-// console.log(firstNavItemEl)
-// // Последний элемент
-// console.log(navEl.lastElementChild)
-// console.log(navEl.children);
-// // HTMLCollection(3) [li.site-nav__item, li.site-nav__item, li.site-nav__item]
-// console.log(navEl.children[0]);
+// Первый элемент
+const firstNavItemEl = navEl.firstElementChild
+console.log(firstNavItemEl)
+// Последний элемент
+console.log(navEl.lastElementChild)
+console.log(navEl.children);
+// получить доступ к элементу по индексу
+console.log(navEl.children[1]);
 
-// Вам нужно помнить первый последний и дети
-
-// мы научились получать ссылки на элементы научились читать свойства изменять эти свойства и работать с класс листом
-// а теперь будем учиться создавать что-то новое
 
 /*
  * Создание элементов
@@ -189,10 +168,12 @@ console.log(navEl.lastElementChild)
  * Создаем заголовок
  */
 
+//! const titleEl = document.createElement("h1");
+
 // const titleEl = document.createElement("h1");
-// // Мы создали теги <h1></h1>
+// Мы создали теги <h1></h1>
 // titleEl.classList.add("page-title");
-// // создали класс на теги <h1 class="page-title"></h1>
+// создали класс на теги <h1 class="page-title"></h1>
 // titleEl.textContent = "Это заголовк страницы";
 /* <h1 class="page-title">Это заголовок страницы</h1> */
 // console.log(titleEl);
@@ -213,7 +194,7 @@ imageEl.width = '640';
 // document.body.appendChild(imageEl);
 const heroEl = document.querySelector('.hero');
 // heroEl.appendChild(titleEl)
-// // за первую операцию мы поставили заголовок
+// за первую операцию мы поставили заголовок
 // heroEl.appendChild(imageEl)
 // за вторую операцию мы поставили картинку
 
