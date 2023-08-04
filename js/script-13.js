@@ -73,6 +73,16 @@ const linkEl = document.querySelector(`.site-nav__link[href="${currentPageUrl}"]
 
 linkEl.classList.add('site-nav__link--current')
 
+
+// получить доступ к свойствам
+const firstNavItemEl = navEl.firstElementChild
+// получить доступ к первому элементу
+console.log(firstNavItemEl)
+// получить доступ к елементу по индексу
+console.log(navEl.children[1])
+// получить доступ к последнему элементу
+console.log(navEl.lastElementChild)
+
 // Дальше интерфейс атрибутов - это набор методов для работы с атрибутами
 
 /*
@@ -189,22 +199,22 @@ const heroEl = document.querySelector('.hero');
 /*
  * Создаем и добавляем новый пункт в меню
  */
-const navItemEl = document.createElement('li');
-navItemEl.classList.add('site-nav__item');
+// const navItemEl = document.createElement('li');
+// navItemEl.classList.add('site-nav__item');
 
-const navLinkEl = document.createElement('a');
-navLinkEl.classList.add('site-nav__link');
-navLinkEl.textContent = 'Личный кабинет';
-navLinkEl.href = '/profile';
+// const navLinkEl = document.createElement('a');
+// navLinkEl.classList.add('site-nav__link');
+// navLinkEl.textContent = 'Личный кабинет';
+// navLinkEl.href = '/profile';
 
 // navLinkEl.appendChild(navLinkEl);
 
 // const navEl = document.querySelector(".site-nav");
 
 // navEl.insertBefore(navItemEl, navEl.children[1]);
-navItemEl.appendChild(navLinkEl);
-// мы сделали li вложили в а
-console.log(navItemEl);
+// navItemEl.appendChild(navLinkEl);
+// // мы сделали li вложили в а
+// console.log(navItemEl);
 
 // получаем ссылку на ul
 // const navEl = document.querySelector('.site-nav')
@@ -214,7 +224,7 @@ console.log(navItemEl);
 // поставить первым
 // navEl.insertBefore(navItemEl, navEl.lastElementChild);
 // поставить последним
-navEl.insertBefore(navItemEl, navEl.children[0]);
+// navEl.insertBefore(navItemEl, navEl.children[0]);
 // поставить по индексу
 
 /*
