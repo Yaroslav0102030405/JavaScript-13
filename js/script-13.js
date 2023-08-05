@@ -121,24 +121,24 @@ console.log(actions[2].dataset.action);
 //! classList.replace() - заменить класс 
 //! cklassList.contains() - проверить или там есть такой класс если да тогда вернтет true // false
 
-const navEl = document.querySelector('.site-nav')
-console.log(navEl.classList)
-// добавить новый класс и через запятую вы добавляете скольок угодно классов. И это работает только с классами
-navEl.classList.add('super-cool', 'bnmkkl')
-// класс который нужно удалить
-navEl.classList.remove('super-cool')
+// const navEl = document.querySelector('.site-nav')
+// console.log(navEl.classList)
+// // добавить новый класс и через запятую вы добавляете скольок угодно классов. И это работает только с классами
+// navEl.classList.add('super-cool', 'bnmkkl')
+// // класс который нужно удалить
+// navEl.classList.remove('super-cool')
 
 
-// можно сделать токл переключение. Если класс есть тогда не добавит а если нет тогда добавит
-navEl.classList.toggle('super-cool')
-// заменили класс super-cool на qazxsw
-navEl.classList.replace('super-cool', 'qazxsw')
-// проверить или есть там такой класс и нам вернте если есть true
-navEl.classList.contains('qazxsw')
+// // можно сделать токл переключение. Если класс есть тогда не добавит а если нет тогда добавит
+// navEl.classList.toggle('super-cool')
+// // заменили класс super-cool на qazxsw
+// navEl.classList.replace('super-cool', 'qazxsw')
+// // проверить или есть там такой класс и нам вернте если есть true
+// navEl.classList.contains('qazxsw')
 
 
 /*
- * Навигация по DOM
+ * Свойства Навигации по DOM-узлам
  */
 
 //! navEl.firstElementChild - первый элемент
@@ -150,13 +150,13 @@ navEl.classList.contains('qazxsw')
 // const navEl = document.querySelector('.site-nav')
 
 // Первый элемент
-const firstNavItemEl = navEl.firstElementChild
-console.log(firstNavItemEl)
-// Последний элемент
-console.log(navEl.lastElementChild)
-console.log(navEl.children);
-// получить доступ к элементу по индексу
-console.log(navEl.children[1]);
+// const firstNavItemEl = navEl.firstElementChild
+// console.log(firstNavItemEl)
+// // Последний элемент
+// console.log(navEl.lastElementChild)
+// console.log(navEl.children);
+// // получить доступ к элементу по индексу
+// console.log(navEl.children[1]);
 
 
 /*
@@ -168,16 +168,22 @@ console.log(navEl.children[1]);
  * Создаем заголовок
  */
 
-//! const titleEl = document.createElement("h1");
+//! const titleEl = document.createElement("h1") // сюду нужно написать валидный тег
+// тег создаться в памяти и его не будет видно  чтобы он появилься нужно повесит ь его на body
 
-// const titleEl = document.createElement("h1");
-// Мы создали теги <h1></h1>
-// titleEl.classList.add("page-title");
-// создали класс на теги <h1 class="page-title"></h1>
-// titleEl.textContent = "Это заголовк страницы";
-/* <h1 class="page-title">Это заголовок страницы</h1> */
-// console.log(titleEl);
-// сейчас мы создали DOM элемент в памяти
+
+// //создали тег h1
+const titleEl = document.createElement("h1");
+
+// создали класс для тега h1
+titleEl.classList.add("page-title");
+
+// создали контент внутри тега h1
+titleEl.textContent = "Это заголовок страницы";
+
+console.log(titleEl);
+
+// const navsEl = document.querySelector('.site-nav')
 
 /*
  * Создаем изображение
@@ -193,7 +199,7 @@ imageEl.width = '640';
 
 // document.body.appendChild(imageEl);
 const heroEl = document.querySelector('.hero');
-// heroEl.appendChild(titleEl)
+heroEl.appendChild(titleEl)
 // за первую операцию мы поставили заголовок
 // heroEl.appendChild(imageEl)
 // за вторую операцию мы поставили картинку
@@ -204,66 +210,71 @@ const heroEl = document.querySelector('.hero');
 /*
  * Создаем и добавляем новый пункт в меню
  */
-// const navItemEl = document.createElement('li');
-// navItemEl.classList.add('site-nav__item');
+const navItemEl = document.createElement('li');
+navItemEl.classList.add('site-nav__item');
 
-// const navLinkEl = document.createElement('a');
-// navLinkEl.classList.add('site-nav__link');
-// navLinkEl.textContent = 'Личный кабинет';
-// navLinkEl.href = '/profile';
+const navLinkEl = document.createElement('a');
+navLinkEl.classList.add('site-nav__link');
+navLinkEl.textContent = 'Личный кабинет';
+navLinkEl.href = '/profile';
 
-// navLinkEl.appendChild(navLinkEl);
 
-// const navEl = document.querySelector(".site-nav");
 
-// navEl.insertBefore(navItemEl, navEl.children[1]);
-// navItemEl.appendChild(navLinkEl);
-// // мы сделали li вложили в а
-// console.log(navItemEl);
+const navEl = document.querySelector(".site-nav");
+
+// вставить первым и по индексу
+// navEl.insertBefore(navLinkEl, navEl.children[0]);
+
+// поставить перед последним элементом
+navEl.insertBefore(navLinkEl, navEl.lastElementChild);
+
+// поставить последним элементом
+// navEl.appendChild(navLinkEl);
+console.log(navItemEl);
 
 // получаем ссылку на ul
 // const navEl = document.querySelector('.site-nav')
 // navEl.appendChild(navItemEl)
-// это поставить последним элементом
+// // это поставить последним элементом
 // navEl.insertBefore(navItemEl, navEl.firstElementChild);
-// поставить первым
+// // поставить первым
 // navEl.insertBefore(navItemEl, navEl.lastElementChild);
-// поставить последним
+// // поставить последним
 // navEl.insertBefore(navItemEl, navEl.children[0]);
-// поставить по индексу
+// //поставить по индексу
 
 /*
  * Создаем и добавляем коллекцию
  */
 
-const colorPickerOptions = [
-  { label: 'red', color: '#f44336' },
-  { label: 'green', color: '#4CAF50' },
-  { label: 'blue', color: '#2196F3' },
-  { label: 'grey', color: '#607D8B' },
-  { label: 'pink', color: '#E91E63' },
-  { label: 'indigp', color: '#3f51B5' },
-];
+// const colorPickerOptions = [
+//   { label: 'red', color: '#f44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'grey', color: '#607D8B' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigp', color: '#3f51B5' },
+// ];
 
-const colorPickerContainerEl = document.querySelector('.js-color-picker');
+// const colorPickerContainerEl = document.querySelector('.js-color-picker');
 
-/*
- * Пишем функцию для создания разметки колорпикера
- */
-const makeColorPickerOptions = options => {
-  return options.map(options => {
-    const buttonEl = document.createElement('button');
-    buttonEl.type = 'button';
-    buttonEl.classList.add('color-picker__options');
-    buttonEl.textContent = options.label;
-    buttonEl.style.backgroundColor = options.color;
+// /*
+//  * Пишем функцию для создания разметки колорпикера
+//  */
+// const makeColorPickerOptions = options => {
+//   return options.map(options => {
+//     const buttonEl = document.createElement('button');
+//     buttonEl.type = 'button';
+//     buttonEl.classList.add('color-picker__options');
+//     buttonEl.textContent = options.label;
+//     buttonEl.style.backgroundColor = options.color;
 
-    return buttonEl;
-  });
-};
+//     return buttonEl;
+//   });
+// };
 
-const elements = makeColorPickerOptions(colorPickerOptions);
-colorPickerContainerEl.append(...elements);
+// const elements = makeColorPickerOptions(colorPickerOptions);
+// colorPickerContainerEl.append(...elements);
 
 // мы мепнули массив обьектов и получили массив элементов и потом этот элемент массивов уже запентели уже в существующую разметку
 // все коллекции в JS делаються вот так
@@ -283,7 +294,7 @@ colorPickerContainerEl.append(...elements);
  * - чтение
  * - запись
  */
-const titleEl = document.querySelector('.title');
+// const titleEl = document.querySelector('.title');
 // console.log(titleEl.textContent)
 // console.log(titleEl.innerHTML)
 // titleEl.innerHTML = '<a href="">Это ссылка</a>';
