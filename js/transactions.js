@@ -1,0 +1,38 @@
+export default [
+  {
+    id: '754667',
+    amount: '179.04',
+    date: '2012-02-01T22:00:00.000Z',
+    bisiness: 'Bogan',
+    name: 'Auto',
+    type: 'deposit',
+    account: '191',
+  },
+  {
+    id: '754667',
+    amount: '179.04',
+    date: '2012-02-01T22:00:00.000Z',
+    bisiness: 'Sveta',
+    name: 'Auto',
+    type: 'deposit',
+    account: '191',
+  },
+  {
+    id: '754667',
+    amount: '179.04',
+    date: '2012-02-01T22:00:00.000Z',
+    bisiness: 'Yaroslav',
+    name: 'Auto',
+    type: 'deposit',
+    account: '191',
+  },
+  {
+    id: '754667',
+    amount: '179.04',
+    date: '2012-02-01T22:00:00.000Z',
+    bisiness: 'Marta',
+    name: 'Auto',
+    type: 'deposit',
+    account: '191',
+  },
+];

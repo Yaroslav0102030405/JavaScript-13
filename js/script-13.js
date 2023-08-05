@@ -317,3 +317,9 @@ titleEl.insertAdjacentHTML(
  */
 
 // смотреть видео
+
+
+// добавить соседний html
+// innerHTML - чтобы заменить новое и очистить полность
+
+// insertAdjacentHTML() - чтобы добавить что-то

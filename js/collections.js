@@ -49,6 +49,7 @@ const makeColorPickerOptions = options => {
     buttonEl.tyoe = 'button';
     // создали название кнопки
     buttonEl.textContent = option.label;
+    buttonEl.classList.add('button-colorPicker')
     buttonEl.style.backgroundColor = option.color;
 
     return buttonEl;

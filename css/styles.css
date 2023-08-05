@@ -1,26 +1,32 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.67;
-    letter-spacing: 0.02em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
 
-    color: var(--main-text-cl);
+  color: var(--main-text-cl);
 }
 
 .title-link {
-    display: inline-flex;
-    margin-left: 40;
-    text-decoration: none;
+  display: inline-flex;
+  margin-left: 40;
+  text-decoration: none;
 }
 
 .site-nav__link--current {
-    color: tomato;
-    width: ;
+  color: tomato;
+  width: ;
 }
 
-button {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
+.button-colorPicker {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border: none;
+}
+
+th {
+  border: solid black;
+  padding: 10px;
 }
