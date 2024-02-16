@@ -37,3 +37,14 @@ tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows);
 const www = document.querySelector('.js-transaction-table-2');
 
 www.insertAdjacentHTML('beforeend', makeTransactionTableRows);
+
+fetch('https://yaroslav0102030405.github.io/bakery/images/baker-man@1x.jpg')
+  .then(r => {
+    console.log(r.url);
+    const www2 = document.createElement('img');
+    www2.src = `${r.url}`;
+    document.body.appendChild(www2);
+  })
+  .catch(error => {
+    console.log('Ошибка');
+  });
